@@ -19,7 +19,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import heroFamily from "@/assets/hero-family.jpg";
-import heroLoop from "@/assets/hero-loop.mp4.asset.json";
+import heroLoop from "@/assets/hero-loop.mp4";
 import remoteWork from "@/assets/remote-work.jpg";
 import fiber from "@/assets/fiber.jpg";
 import streaming from "@/assets/streaming.jpg";
@@ -78,7 +78,7 @@ function Index() {
           <div className="relative">
             <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/15 via-accent/10 to-transparent blur-2xl" />
             <video
-              src={heroLoop.url}
+              src={heroLoop}
               poster={heroFamily}
               autoPlay
               loop
