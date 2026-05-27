@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SoporteRouteImport } from './routes/soporte'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as CoberturaRouteImport } from './routes/cobertura'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SoporteRoute = SoporteRouteImport.update({
+  id: '/soporte',
+  path: '/soporte',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PortalRoute = PortalRouteImport.update({
   id: '/portal',
   path: '/portal',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cobertura': typeof CoberturaRoute
   '/portal': typeof PortalRoute
+  '/soporte': typeof SoporteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cobertura': typeof CoberturaRoute
   '/portal': typeof PortalRoute
+  '/soporte': typeof SoporteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cobertura': typeof CoberturaRoute
   '/portal': typeof PortalRoute
+  '/soporte': typeof SoporteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cobertura' | '/portal'
+  fullPaths: '/' | '/cobertura' | '/portal' | '/soporte'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cobertura' | '/portal'
-  id: '__root__' | '/' | '/cobertura' | '/portal'
+  to: '/' | '/cobertura' | '/portal' | '/soporte'
+  id: '__root__' | '/' | '/cobertura' | '/portal' | '/soporte'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CoberturaRoute: typeof CoberturaRoute
   PortalRoute: typeof PortalRoute
+  SoporteRoute: typeof SoporteRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/soporte': {
+      id: '/soporte'
+      path: '/soporte'
+      fullPath: '/soporte'
+      preLoaderRoute: typeof SoporteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/portal': {
       id: '/portal'
       path: '/portal'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CoberturaRoute: CoberturaRoute,
   PortalRoute: PortalRoute,
+  SoporteRoute: SoporteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
