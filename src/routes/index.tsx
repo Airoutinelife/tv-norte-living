@@ -19,6 +19,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import heroFamily from "@/assets/hero-family.jpg";
+import heroLoop from "@/assets/hero-loop.mp4.asset.json";
 import remoteWork from "@/assets/remote-work.jpg";
 import fiber from "@/assets/fiber.jpg";
 import streaming from "@/assets/streaming.jpg";
@@ -76,12 +77,15 @@ function Index() {
           </div>
           <div className="relative">
             <div className="absolute -inset-6 -z-10 rounded-[3rem] bg-gradient-to-br from-primary/15 via-accent/10 to-transparent blur-2xl" />
-            <img
-              src={heroFamily}
-              alt="Familia disfrutando TV Norte en casa"
-              width={1600}
-              height={1100}
-              className="rounded-[2rem] shadow-2xl ring-1 ring-black/5"
+            <video
+              src={heroLoop.url}
+              poster={heroFamily}
+              autoPlay
+              loop
+              muted
+              playsInline
+              aria-label="Familia disfrutando Tu Norte TV en casa"
+              className="w-full rounded-[2rem] shadow-2xl ring-1 ring-black/5 object-cover aspect-[16/11]"
             />
             <Card className="absolute -bottom-6 -left-6 w-56 rounded-2xl p-4 shadow-xl">
               <div className="flex items-center gap-3">
