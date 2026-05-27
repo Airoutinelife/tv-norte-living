@@ -33,7 +33,7 @@ const aiCards = [
   { icon: Activity, title: "Estado del Servicio", desc: "Monitoreo en tiempo real de tu conexión y tu zona.", soon: false },
   { icon: Wrench, title: "Mi Instalación", desc: "Agenda, sigue y califica tu instalación desde el celular.", soon: false },
   { icon: MessageCircle, title: "WhatsApp Inteligente", desc: "Soporte conversacional 24/7 que entiende a tu familia.", soon: false },
-  { icon: Mic, title: "Voice Assistant", desc: "Habla con TV Norte: cambia tu plan o pide soporte por voz.", soon: true },
+  { icon: Mic, title: "Voice Assistant", desc: "Habla con Tu Norte TV: cambia tu plan o pide soporte por voz.", soon: true },
 ];
 
 function Index() {
@@ -119,7 +119,7 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="flex items-end justify-between gap-4">
           <div>
-            <Badge variant="outline" className="rounded-full">Inteligencia TV Norte</Badge>
+            <Badge variant="outline" className="rounded-full">Inteligencia Tu Norte TV</Badge>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Tu hogar, más inteligente.</h2>
             <p className="mt-3 max-w-xl text-muted-foreground">
               Servicios potenciados por inteligencia artificial para que todo simplemente funcione.
@@ -224,7 +224,7 @@ function Index() {
           <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-accent/30 blur-3xl" />
           <div className="relative grid items-center gap-8 md:grid-cols-2">
             <div>
-              <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">¿Listo para cambiar a TV Norte?</h2>
+              <h2 className="text-4xl font-semibold tracking-tight md:text-5xl">¿Listo para cambiar a Tu Norte TV?</h2>
               <p className="mt-4 max-w-md text-primary-foreground/80">Valida cobertura en 30 segundos y agenda tu instalación al día siguiente.</p>
             </div>
             <div className="flex flex-wrap gap-3 md:justify-end">
