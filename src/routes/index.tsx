@@ -132,7 +132,11 @@ function Index() {
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {aiCards.map(({ icon: Icon, title, desc, soon }) => (
-            <Card key={title} className="group relative overflow-hidden rounded-3xl border-border/60 p-6 transition hover:shadow-xl hover:-translate-y-0.5">
+            <Link
+              key={title}
+              to={soon ? "/soporte" : "/portal"}
+              className="group relative block overflow-hidden rounded-3xl border border-border/60 bg-card p-6 transition hover:shadow-xl hover:-translate-y-0.5"
+            >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">
                 <Icon className="h-6 w-6" />
               </div>
@@ -145,7 +149,7 @@ function Index() {
                   Explorar <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </div>
               )}
-            </Card>
+            </Link>
           ))}
         </div>
       </section>

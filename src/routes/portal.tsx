@@ -40,7 +40,9 @@ function PortalPage() {
               <div><p className="text-primary-foreground/70">Carga</p><p className="text-xl font-semibold">601 Mbps</p></div>
               <div><p className="text-primary-foreground/70">Latencia</p><p className="text-xl font-semibold">8 ms</p></div>
             </div>
-            <Button variant="secondary" className="mt-8 rounded-full">Test de velocidad <ArrowRight className="ml-1 h-4 w-4" /></Button>
+            <Button asChild variant="secondary" className="mt-8 rounded-full">
+              <Link to="/velocidad">Test de velocidad <ArrowRight className="ml-1 h-4 w-4" /></Link>
+            </Button>
           </Card>
 
           <Card className="rounded-3xl p-8">
@@ -62,19 +64,21 @@ function PortalPage() {
         {/* Quick actions */}
         <h2 className="mt-16 text-2xl font-semibold tracking-tight">Accesos rápidos</h2>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            { icon: Activity, title: "Estado del servicio", desc: "Todo funcionando" },
-            { icon: Calendar, title: "Mi instalación", desc: "Agendada lun 27, 10:00" },
-            { icon: Tv, title: "Mi parrilla TV", desc: "120 canales HD" },
-            { icon: Headphones, title: "Soporte AI", desc: "Habla con WhatsApp" },
-          ].map(({ icon: Icon, title, desc }) => (
-            <Card key={title} className="group cursor-pointer rounded-3xl p-6 transition hover:shadow-lg hover:-translate-y-0.5">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                <Icon className="h-6 w-6" />
-              </div>
-              <h3 className="mt-5 text-lg font-semibold">{title}</h3>
-              <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
-            </Card>
+          {([
+            { icon: Activity, title: "Estado del servicio", desc: "Todo funcionando", to: "/soporte" as const },
+            { icon: Calendar, title: "Mi instalación", desc: "Agendada lun 27, 10:00", to: "/soporte" as const },
+            { icon: Tv, title: "Mi parrilla TV", desc: "120 canales HD", to: "/planes" as const },
+            { icon: Headphones, title: "Soporte AI", desc: "Habla con WhatsApp", to: "/soporte" as const },
+          ]).map(({ icon: Icon, title, desc, to }) => (
+            <Link key={title} to={to} className="block">
+              <Card className="group cursor-pointer rounded-3xl p-6 transition hover:shadow-lg hover:-translate-y-0.5 h-full">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <Icon className="h-6 w-6" />
+                </div>
+                <h3 className="mt-5 text-lg font-semibold">{title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
+              </Card>
+            </Link>
           ))}
         </div>
 
