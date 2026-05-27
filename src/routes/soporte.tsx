@@ -47,7 +47,7 @@ function Soporte() {
           <Card className="rounded-3xl p-8 text-center">
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary"><Mail className="h-6 w-6" /></div>
             <h3 className="mt-5 text-lg font-semibold">Correo</h3>
-            <p className="mt-1 text-sm text-muted-foreground">hola@tvnorte.co</p>
+            <p className="mt-1 text-sm text-muted-foreground">hola@tunorte.co</p>
             <Button variant="outline" className="mt-5 rounded-full w-full">Escribir</Button>
           </Card>
         </div>
