@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Gauge, ArrowDownToLine, ArrowUpFromLine, Activity } from "lucide-react";
 
 export const Route = createFileRoute("/velocidad")({
-  component: Velocidad;
+  component: Velocidad,
 });
 
 function Velocidad() {
