@@ -69,7 +69,7 @@ export function SiteFooter() {
             <li><Link to="/soporte">Centro de ayuda</Link></li>
             <li><Link to="/pqr">Radicar PQR</Link></li>
             <li><Link to="/portal">Mi cuenta</Link></li>
-            <li>WhatsApp</li>
+            <li><a href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
           </ul>
         </div>
         <div>
