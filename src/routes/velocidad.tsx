@@ -9,8 +9,10 @@ export const Route = createFileRoute("/velocidad")({
   component: Velocidad,
 });
 
+type TestState = "idle" | "testing" | "done";
+
 function Velocidad() {
-  const [state, setState] = useState<"idle" | "testing" | "done">("idle");
+  const [state, setState] = useState<TestState>("idle");
   const [result, setResult] = useState({ down: 0, up: 0, ping: 0 });
 
   const start = () => {
