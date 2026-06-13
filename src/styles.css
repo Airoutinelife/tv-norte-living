@@ -142,3 +142,38 @@
     color: var(--color-foreground);
   }
 }
+
+/* Protecciones y Mejoras para el Widget de n8n Chat */
+#n8n-chat-container textarea,
+#n8n-chat-container input {
+  border: 1px solid var(--color-border) !important;
+  border-radius: 12px !important;
+  padding: 14px 16px !important;
+  background-color: var(--color-background) !important;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05) !important;
+  font-family: inherit !important;
+  font-size: 0.95rem !important;
+  transition: all 0.2s ease;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+#n8n-chat-container textarea:focus,
+#n8n-chat-container input:focus {
+  outline: 2px solid var(--color-primary) !important;
+  outline-offset: -1px !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05) !important;
+}
+
+#n8n-chat-container button[type="submit"] {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-foreground) !important;
+  border-radius: 50% !important;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+#n8n-chat-container button[type="submit"]:hover {
+  opacity: 1;
+}

@@ -33,7 +33,7 @@ const aiCards = [
   { icon: Receipt, title: "Facturación AI", desc: "Entiende tu factura en segundos con explicaciones claras.", soon: false },
   { icon: Activity, title: "Estado del Servicio", desc: "Monitoreo en tiempo real de tu conexión y tu zona.", soon: false },
   { icon: Wrench, title: "Mi Instalación", desc: "Agenda, sigue y califica tu instalación desde el celular.", soon: false },
-  { icon: MessageCircle, title: "WhatsApp Inteligente", desc: "Soporte conversacional 24/7 que entiende a tu familia.", soon: false },
+  { icon: MessageCircle, title: "WhatsApp Inteligente", desc: "Soporte conversacional 24/7 que entiende a tu familia.", soon: false, link: "/soporte" },
   { icon: Mic, title: "Voice Assistant", desc: "Habla con Tu Norte TV: cambia tu plan o pide soporte por voz.", soon: true },
 ];
 
@@ -131,10 +131,10 @@ function Index() {
           </div>
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {aiCards.map(({ icon: Icon, title, desc, soon }) => (
+          {aiCards.map(({ icon: Icon, title, desc, soon, link }) => (
             <Link
               key={title}
-              to={soon ? "/soporte" : "/portal"}
+              to={link || (soon ? "/soporte" : "/portal")}
               className="group relative block overflow-hidden rounded-3xl border border-border/60 bg-card p-6 transition hover:shadow-xl hover:-translate-y-0.5"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary transition group-hover:bg-primary group-hover:text-primary-foreground">

@@ -1,4 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useEffect } from "react";
 import {
   Outlet,
   Link,
@@ -110,6 +111,10 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    // La burbuja de chat global ha sido eliminada. Ahora el chat vivirá embebido en la página de soporte.
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
